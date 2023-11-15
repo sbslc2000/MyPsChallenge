@@ -1,4 +1,4 @@
-package problems.boj.NO23971_JOAC_4;
+package problems.boj.no23971_joac_4;
 
 import java.util.Scanner;
 

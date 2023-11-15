@@ -5,7 +5,7 @@
  * 작성 일시 :
  * 관련 링크 :
  */
-public class Template {
+public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
