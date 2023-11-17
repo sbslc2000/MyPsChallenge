@@ -1,6 +1,13 @@
 package problems.boj.no1157_vocabulary;
 import java.io.*;
 
+/**
+ * 문제 이름 : 단어 공부
+ * 링크 : https://www.acmicpc.net/problem/1157
+ * 알고리즘 분류 : ?
+ * 작성 일시 : 2023-11-17g
+ * 관련 링크 :
+ */
 public class Main {
     
     public static void main(String[] args) throws IOException {
@@ -26,7 +33,6 @@ public class Main {
             }
         }
 
-    
         System.out.printf("%c\n", dup ? '?' : maxChar+65);
     }
 }
