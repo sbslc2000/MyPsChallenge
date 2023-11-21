@@ -10,7 +10,7 @@ import java.io.OutputStreamWriter;
 /**
  * 문제 이름 : 줄세우기
  * 링크 : https://www.acmicpc.net/problem/10431
- * 알고리즘 분류 : ?
+ * 알고리즘 분류 : 구현, 시뮬레이션
  * 작성 일시 : 2023-11-20
  * 관련 링크 :
  * 
@@ -70,7 +70,7 @@ public class Main {
         //output
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         for(i = 0; i < N; i++) {
-            bw.write(i+" "+res[i]+"\n");
+            bw.write((i+1)+" "+res[i]+"\n");
         }
 
         bw.flush();
