@@ -24,21 +24,16 @@ public class Main {
         int N = sc.nextInt();
         sc.close();
 
+        if(M == 1 || M == 2) {
+            System.out.println(2);
+            M = 3;
+        }
 
+        if(M % 2 == 0) {
+           M++;
+        }
         
-        for(int i = M; i <= N; i++) {
-            if(i == 1) {
-                continue;
-            }
-
-            if(i == 2) {
-                System.out.println(2);
-                continue;
-            }
-            
-            if(i % 2 == 0) {
-                continue;
-            }
+        for(int i = M; i <= N; i+= 2) {
 
             boolean isPrime = true;
             for(int j = 3; j <= Math.sqrt(i); j++) {
