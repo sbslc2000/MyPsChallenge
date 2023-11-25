@@ -1,4 +1,4 @@
-package problems.boj.no_2179_similar_word;
+package problems.boj.unsolved.no_2179_similar_word;
 
 import java.io.*;
 import java.util.*;

@@ -1,4 +1,4 @@
-package problems.boj.no8979_olympic;
+package problems.boj.solved.no8979_olympic;
 
 import java.io.BufferedReader;
 import java.io.IOException;

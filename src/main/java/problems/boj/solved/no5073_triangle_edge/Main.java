@@ -1,4 +1,4 @@
-package problems.boj.no5073_triangle_edge;
+package problems.boj.solved.no5073_triangle_edge;
 
 import java.util.Scanner;
 
@@ -41,7 +41,6 @@ public class Main {
             }
 
             if (a < b) {
-                a = a + b;
                 b = a - b;
                 a = a - b;
             }

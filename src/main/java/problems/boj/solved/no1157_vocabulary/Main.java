@@ -1,4 +1,4 @@
-package problems.boj.no1157_vocabulary;
+package problems.boj.solved.no1157_vocabulary;
 import java.io.*;
 
 /**

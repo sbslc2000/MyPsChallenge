@@ -1,4 +1,4 @@
-package problems.boj.no4659_pronouncing_password;
+package problems.boj.solved.no4659_pronouncing_password;
 
 
 import java.io.BufferedReader;

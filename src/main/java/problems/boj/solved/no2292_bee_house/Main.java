@@ -1,4 +1,4 @@
-package problems.boj.no2292_bee_house;
+package problems.boj.solved.no2292_bee_house;
 
 import java.util.Scanner;
 

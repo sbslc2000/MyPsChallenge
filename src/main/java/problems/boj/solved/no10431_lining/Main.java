@@ -1,4 +1,4 @@
-package problems.boj.no10431_lining;
+package problems.boj.solved.no10431_lining;
 
 import java.io.BufferedReader;
 import java.io.IOException;

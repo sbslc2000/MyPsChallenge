@@ -1,4 +1,4 @@
-package problems.boj.no9655_rock_game;
+package problems.boj.solved.no9655_rock_game;
 
 import java.util.*;
 

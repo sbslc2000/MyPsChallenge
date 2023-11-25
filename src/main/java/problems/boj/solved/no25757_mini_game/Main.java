@@ -1,4 +1,4 @@
-package problems.boj.no25757_mini_game;
+package problems.boj.solved.no25757_mini_game;
 
 import java.util.*;
 import java.io.BufferedReader;

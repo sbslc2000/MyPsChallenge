@@ -1,4 +1,4 @@
-package problems.boj.no_1929_find_prime_number;
+package problems.boj.solved.no_1929_find_prime_number;
 
 
 import java.util.*;
