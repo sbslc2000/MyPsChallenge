@@ -1,4 +1,4 @@
-package problems.boj.unsolved.no_2467_liquid;
+package problems.boj.solved.no_2467_liquid;
 
 import java.io.*;
 import java.util.*;
