@@ -122,7 +122,6 @@ class Main {
                         continue;
                     } 
 
-                    
                     // System.out.printf("visit = "+visited[r][c]+" , cost(%d) + graph(%d) < cost(%d)\n",cost[p.r][p.c], graph[r][c], cost[r][c]);
                     if(!visited[r][c] && cost[p.r][p.c] + graph[r][c] < cost[r][c]) {
                         cost[r][c] = cost[p.r][p.c] + graph[r][c];
