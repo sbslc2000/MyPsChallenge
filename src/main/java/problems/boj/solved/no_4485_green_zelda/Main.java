@@ -100,7 +100,6 @@ class Main {
 
             queue = new PriorityQueue<>();
             cost[0][0] = graph[0][0];
-
             queue.add(new Pair(0,0));
 
             while((p = queue.poll()) != null) { //extract min
@@ -123,6 +122,7 @@ class Main {
                     } 
 
                     // System.out.printf("visit = "+visited[r][c]+" , cost(%d) + graph(%d) < cost(%d)\n",cost[p.r][p.c], graph[r][c], cost[r][c]);
+                    // relaxation
                     if(!visited[r][c] && cost[p.r][p.c] + graph[r][c] < cost[r][c]) {
                         cost[r][c] = cost[p.r][p.c] + graph[r][c];
                         queue.add(new Pair(r,c));
