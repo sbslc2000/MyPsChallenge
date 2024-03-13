@@ -1,6 +1,7 @@
 package problems.boj.solved.no_14501_left_the_company;
 
 import java.util.*;
+
 import java.io.*;
 
 /**
