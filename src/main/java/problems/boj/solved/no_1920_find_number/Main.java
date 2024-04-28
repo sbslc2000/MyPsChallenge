@@ -51,7 +51,5 @@ public class Main {
         } else {
             return binarySearch(target, mid + 1, right);
         }
-
-
     }
 }
