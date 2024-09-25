@@ -4,16 +4,6 @@ import java.util.*;
 import java.io.*;
 import java.util.stream.*;
 
-/**
- * 문제 이름 : 안전영역
- * 링크 : https://www.acmicpc.net/problem/2468
- * 알고리즘 분류 : ?
- * 작성 일시 : 2024-04-08
- * 관련 링크 :
- * 
- * 시간 제한 : 1초
- * 메모리 제한 : 128M
- */
 public class Main {
     
     static int N;

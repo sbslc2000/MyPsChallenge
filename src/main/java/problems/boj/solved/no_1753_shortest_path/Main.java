@@ -3,6 +3,7 @@ package problems.boj.solved.no_1753_shortest_path;
 import java.util.*;
 import java.io.*;
 
+
 /**
  * 문제 이름 : 최단경로
  * 링크 : https://www.acmicpc.net/problem/1753
@@ -18,127 +19,93 @@ import java.io.*;
  */
 public class Main {
 
+    static class Node {
+        int to;
+        int w;
 
-
-    private static class DijkstraGraph {
-
-        public static class Edge {
-            int from;
-            int to;
-            int weight;
-
-            public Edge(int from, int to, int weight) {
-                this.from = from;
-                this.to = to;
-                this.weight = weight;
-            }
-
-            @Override
-            public String toString() {
-                return String.format("[%d, %d, %d]", from, to, weight);
-            }
-        }
-
-        int vertexSize;
-        Map<Integer, List<Edge>> vertexes = new HashMap<>();
-
-        public DijkstraGraph(int size) {
-            this.vertexSize = size;
-        }
-
-
-        public void add(int from, int to, int weight) {
-            Edge newEdge = new Edge(from, to, weight);
-            List<Edge> edges = vertexes.getOrDefault(from, new LinkedList<>());
-            edges.add(newEdge);
-            vertexes.put(from, edges);
-        }
-
-        public int[] shortestPath(int start) {
-            int[] result = new int[vertexSize + 1];
-            boolean[] visited = new boolean[vertexSize + 1];
-            Arrays.fill(result, Integer.MAX_VALUE);
-
-            Queue<Edge> q = new PriorityQueue<>((a, b) -> b.from - a.from);
-            visited[start] = true;
-            result[start] = 0;
-            relaxation(result, start);
-            
-            vertexes.getOrDefault(start, Collections.emptyList()).forEach((edge) -> {
-                q.add(edge);
-            });
-
-            while(!q.isEmpty()) {
-                Edge edge = q.poll();
-                // System.out.println(edge);
-                if(visited[edge.to]) {
-                    continue;
-                }
-
-                visited[edge.to] = true;
-                // System.out.printf("Visit %d\n", edge.to);
-                relaxation(result, edge.to);
-
-                vertexes.getOrDefault(edge.to, Collections.emptyList()).forEach((e) -> {
-                    q.add(e);
-                });
-            }
-
-            return result;
-        }
-
-        private void relaxation(int[] arr, int visit) {
-            List<Edge> edges = vertexes.getOrDefault(visit, Collections.emptyList());
-
-            for(Edge edge : edges) {
-                arr[edge.to] = Math.min(arr[edge.to], arr[visit] + edge.weight);
-            }
+        public Node(int to, int w) {
+            this.to = to;
+            this.w = w;
         }
     }
 
-    private static int V;
-    private static int E;
-    private static int K;
+    static Map<Integer, List<Node>> graph;
 
+    static int V;
+    static int E;
+    static int K;
+
+    static boolean[] visited;
+    static int[] distance;
+    
     public static void main(String[] args) throws Exception {
-        //var
-        int[] splited;
-
-        //input
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] splited;
 
-        splited = read(br);
+        splited = br.readLine().split(" ");
 
-        V = splited[0];
-        E = splited[1];
+        V = Integer.parseInt(splited[0]);
+        E = Integer.parseInt(splited[1]);
 
-        K = read(br)[0];
+        K = Integer.parseInt(br.readLine()) - 1;
 
-        DijkstraGraph g = new DijkstraGraph(V);
-
+        graph = new HashMap<>(); 
         for(int i = 0; i < E; i++) {
-            splited = read(br);
-            g.add(splited[0], splited[1], splited[2]);
+            graph.put(i, new LinkedList<>());
+        }
+        visited = new boolean[V];
+        distance = new int[V];
+
+        Arrays.fill(distance, Integer.MAX_VALUE);
+
+        int u, v, w;
+        for (int i = 0; i < E; i++) {
+            splited = br.readLine().split(" ");
+            u = Integer.parseInt(splited[0]) - 1;
+            v = Integer.parseInt(splited[1]) - 1;
+            w = Integer.parseInt(splited[2]);
+            List<Node> l = graph.get(u);
+            l.add(new Node(v, w));
         }
 
-        //logic
-        int[] result = g.shortestPath(K);
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[1] - b[1]); 
 
-        for(int i = 1; i < result.length; i++) {
-            if(result[i] == Integer.MAX_VALUE) {
-                System.out.println("INF");
+        distance[K] = 0;
+        pq.add(new int[]{K, 0});
+
+        while(!pq.isEmpty()) {
+            int[] polled = pq.poll();
+            int _v = polled[0];
+            int _w = polled[1];
+
+            if (visited[_v]) {
                 continue;
             }
-            System.out.println(result[i]);
+
+            visited[_v] = true;
+
+            List<Node> _l = graph.get(_v);
+
+            for (Node n : _l) {
+                if (distance[n.to] > n.w + _w) {
+                    distance[n.to] = n.w + _w; 
+                    pq.add(new int[]{n.to, distance[n.to]});
+                }
+            }
         }
 
-    }
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-    private static int[] read(BufferedReader br) throws Exception {
-        return Arrays.stream(br.readLine().split(" "))
-            .mapToInt(Integer::parseInt)
-            .toArray();
+        for(int i = 0; i < distance.length; i++) {
+            String s = distance[i] == Integer.MAX_VALUE ? 
+                "INF" : String.valueOf(distance[i]);
+            bw.write(s);
+            bw.write('\n');
 
-    }
+            // System.out.println(distance[i]);
+        }
+
+        bw.flush();
     
+    }
 }
