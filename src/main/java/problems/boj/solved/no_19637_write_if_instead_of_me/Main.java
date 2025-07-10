@@ -1,5 +1,3 @@
-package problems.boj.solved.no_19637_write_if_instead_of_me;
-
 import java.io.*;
 import java.util.*;
 
