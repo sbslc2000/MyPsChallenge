@@ -1,5 +1,6 @@
+
+
 import java.io.*;
-import java.util.*;
 
 /**
  * 문제 이름 : IF문 좀 대신 써줘

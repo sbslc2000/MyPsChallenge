@@ -1,7 +1,6 @@
 package problems.boj.solved.no_1966_printer_queue;
 
 import java.util.*;
-import java.util.stream.*;
 import java.io.*;
 
 /**

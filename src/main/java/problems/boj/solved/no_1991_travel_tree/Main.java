@@ -38,6 +38,8 @@ public class Main {
         System.out.println();
         printPostorder("A");
         System.out.println();
+
+        sc.close();
     }
 
     private static void printPreorder(String n) {

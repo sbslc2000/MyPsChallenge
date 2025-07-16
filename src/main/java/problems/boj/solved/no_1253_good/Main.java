@@ -2,7 +2,7 @@ package problems.boj.solved.no_1253_good;
 
 import java.io.*;
 import java.util.*;
-import java.util.stream.*;
+
 
 /**
  * 문제 이름 : 좋다

@@ -16,5 +16,7 @@ public class Main {
         C = sc.nextInt();
 
         System.out.println((int)(Math.pow(A, B) % C));
+
+        sc.close();
     }
 }
