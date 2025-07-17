@@ -1,5 +1,3 @@
-package problems.boj.solved.no_1063_king;
-
 import java.awt.Point;
 import java.util.*;
 import java.io.*;

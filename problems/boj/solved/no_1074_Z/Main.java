@@ -1,5 +1,3 @@
-package problems.boj.solved.no_1074_Z;
-
 import java.util.*;
 /**
  * 문제 이름 : Z
