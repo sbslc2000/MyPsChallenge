@@ -10,7 +10,7 @@ public class Main {
     static int[][] map;
     static int min = Integer.MAX_VALUE;
 
-    static boolean isInRange(int c) {
+    static boolean isInRange(int c) { 
         return c >= 0 && c < M;
     }
 

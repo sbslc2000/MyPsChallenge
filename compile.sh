@@ -14,7 +14,7 @@ if [ -z "$1" ]; then
 fi
 
 PROBLEM_NUMBER=$1
-BASE_SRC_DIR="src/main/java/problems/boj/solved"
+BASE_SRC_DIR="problems/boj/solved"
 TARGET_BIN_BASE_DIR="bin/prob" # /bin 대신 프로젝트 상대 경로 bin 사용 권장
 
 # 2. src/main/java/problems/boj/solved/no_{문제번호}_% 로 시작하는 디렉터리를 찾는다.
