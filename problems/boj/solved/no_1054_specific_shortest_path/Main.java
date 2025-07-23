@@ -1,5 +1,3 @@
-package problems.boj.solved.no_1054_specific_shortest_path;
-
 import java.io.*;
 import java.util.*;
 
@@ -88,7 +86,7 @@ public class Main {
         PriorityQueue<int[]> pq = new PriorityQueue<>((a,b) -> a[1] -  b[1]);
         pq.add(new int[]{from, 0});
 
-        while(!pq.isEmpty()) {
+        while(!pq.isEmpty()) { 
             int[] polled = pq.poll();
             int _to = polled[0];
             int _w = polled[1];
